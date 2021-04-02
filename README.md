@@ -14,6 +14,8 @@ of the file `ustils/config.py`. To choose the doctor to monitor modify the field
 
 ## Run
 
+Install Docker and do the following:
+
 * build the project with `make build`
 * run it with `make run`
   
