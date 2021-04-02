@@ -1,8 +1,8 @@
 # Check doctors availablitiy
 
-This software automatically checks docs availability on this (website)[https://servizi.apss.tn.it/ricmedico/]
+This software automatically checks docs availability on this [website](https://servizi.apss.tn.it/ricmedico/)
 
-## configuration
+## Configuration
 
 Before running the program fill the fields
 
@@ -12,5 +12,8 @@ Before running the program fill the fields
 
 of the file `ustils/config.py`. To choose the doctor to monitor modify the field `doctorCodes` of the same file.
 
+## Run
 
-
+* build the project with `make build`
+* run it with `make run`
+  
