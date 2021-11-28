@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  doc-avialability:
+    build: .
+    volumes:
+      - ./config.json:/app/config.json
+      - ./doctors.json:/app/doctors.json

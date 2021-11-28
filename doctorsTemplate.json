@@ -1,0 +1,17 @@
+{
+    "doctors": {
+        "doctor name 1": { 
+            "code": "apps doctor's code as int",
+            "receiverEmail": [
+                "receiverEmail1@mail.com",
+                "receiverEmail2@mail.com"
+            ]
+        },
+        "doctor name 2": {
+            "code": "apps doctor's code as int",
+            "receiverEmail": [
+                "receiverEmail3@mail.com"
+            ]
+        }
+    }
+}

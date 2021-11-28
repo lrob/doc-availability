@@ -1,0 +1,8 @@
+{
+    "adminEmail": "email_that_receives_daily_test_email",
+    "senderEmailAddress": "gmail_account_used_to_send_email_notification",
+    "senderPassword": "gmail_account_password",
+    "subject": "Doctor availability",
+    "baseURL": "https://servizi.apss.tn.it/ricmedico/medico.php?codMedicoMg=",
+    "sleepMinutes": 10
+}
