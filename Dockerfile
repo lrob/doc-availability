@@ -7,4 +7,6 @@ COPY --from=builder /root/.local /root/.local
 
 WORKDIR /app
 COPY main.py /app
+ENV PATH=/root/.local:$PATH
+
 ENTRYPOINT [ "python", "-u", "main.py" ]
