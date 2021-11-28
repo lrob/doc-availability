@@ -1,13 +1,12 @@
-FROM ubuntu:20.04
+FROM python:3.10.0-alpine AS builder
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip && pip3 install --user --no-cache-dir -r /tmp/requirements.txt
 
-RUN apt update && apt install -y \
-      python3 python3-pip
-
-COPY requirements.txt app/requirements.txt
+FROM python:3.10.0-alpine
+COPY --from=builder /root/.local /root/.local
 
 WORKDIR /app
-RUN pip3 install -r requirements.txt
-
 COPY main.py /app
+ENV PATH=/root/.local:$PATH
 
-CMD python3 -u main.py
+ENTRYPOINT [ "python", "-u", "main.py" ]
