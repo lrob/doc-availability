@@ -21,6 +21,7 @@ minutes_per_day = 24 * 60
 with open("config.json") as json_conf:
     conf = json.load(json_conf)
 
+    print("Starting main loop..")
     while(True):
         # Sleep at the beginning of the loop since if the program crashes due to a network error, for example, the container is restarted and it would
         # immediately experience the same crash. In this way if the program is restarted we wait sleepMinutes minutes before retrying again.
