@@ -21,7 +21,11 @@ minutes_per_day = 24 * 60
 with open("config.json") as json_conf:
     conf = json.load(json_conf)
 
+    print("Starting main loop..")
     while(True):
+        # Sleep at the beginning of the loop since if the program crashes due to a network error, for example, the container is restarted and it would
+        # immediately experience the same crash. In this way if the program is restarted we wait sleepMinutes minutes before retrying again.
+        time.sleep(conf["sleepMinutes"] * 60)
         counter += 1
         with open("doctors.json") as json_doctors:
             doctors = json.load(json_doctors)
@@ -60,4 +64,3 @@ with open("config.json") as json_conf:
 
                 print("Sending test message")
                 sendEmailViaGmailSMPT(conf["senderEmailAddress"], conf["senderPassword"], conf["adminEmail"], msg.as_string())      
-        time.sleep(conf["sleepMinutes"] * 60)
