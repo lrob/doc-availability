@@ -44,10 +44,9 @@ with open("config.json") as json_conf:
                     partText = MIMEText(message, 'plain')
                     msg.attach(partText)
 
-                    for receiver in doctor["receiverEmail"]:
-                        msg['To'] = receiver
-                        print("Doctor {} is avaliable. Sending mail to {}".format(doctorKey, receiver))
-                        sendEmailViaGmailSMPT(conf["senderEmailAddress"], conf["senderPassword"], receiver, msg.as_string())
+                    msg['To'] = ", ".join(doctor["receiverEmail"])
+                    print("Doctor {} is avaliable. Sending mail to {}".format(doctorKey, doctor["receiverEmail"]))
+                    sendEmailViaGmailSMPT(conf["senderEmailAddress"], conf["senderPassword"], doctor["receiverEmail"], msg.as_string())
                 else:
                     print("Doctor {} is not available".format(doctorKey))
 
